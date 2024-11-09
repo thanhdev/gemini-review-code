@@ -1,0 +1,46 @@
+name: "Review Pull Request auto"
+description: "Automatically Review Pull Request with Gemini API"
+
+author: "bunheree"
+
+inputs:
+  gemini_api_key:
+    description: "The Gemini AI API token to use for the action"
+    required: true
+  github_token:
+    description: "The GitHub token to use for the action"
+    required: true
+  github_repository:
+    description: "The GitHub repository to use for the action"
+    required: true
+    default: "${{ github.repository }}"
+  github_pull_request_number:
+    description: "The GitHub pull request number to use for the action"
+    required: true
+    default: "${{ github.event.pull_request.number }}"
+  git_commit_hash:
+    description: "The GitHub commit hash to use for the action"
+    required: true
+    default: "${{ github.event.pull_request.head.sha }}"
+  model:
+    description: "Gemini Model"
+    required: true
+    default: "gemini-1.5-pro"
+  pull_request_diff:
+    description: "Pull request diff"
+    required: true
+  extra_prompt:
+    description: "Provide additional"
+    required: true
+  pull_request_chunk_size:
+    description: "Pull request chunk size"
+    required: false
+    default: "3500"
+  log_level:
+    description: "Log level"
+    required: false
+    default: "INFO"
+
+runs:
+  using: "node20"
+  main: "index.js"

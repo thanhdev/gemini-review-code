@@ -1,0 +1,29 @@
+{
+  "name": "@bunheree/gemini-review-pr",
+  "version": "1.0.0",
+  "description": "Review Pull Request with Gemini",
+  "main": "index.js",
+  "author": "Emma Ngo",
+  "type": "module",
+  "scripts": {
+    "start": "node index.js",
+    "build": "tsc"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bunheree/gemini-review"
+  },
+  "devDependencies": {
+    "@types/node": "^22.9.0"
+  },
+  "dependencies": {
+    "@actions/core": "^1.11.1",
+    "@actions/github": "^6.0.0",
+    "@google/generative-ai": "^0.21.0",
+    "axios": "^1.7.7",
+    "dotenv": "^16.4.5",
+    "loglevel": "^1.9.2",
+    "tslog": "^4.9.3"
+  }
+}
