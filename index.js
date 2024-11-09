@@ -192,5 +192,6 @@ async function main() {
 }
 
 main().catch((error) => {
+  console.log("Lorem lorem")
   logger.error("Error during execution details: ", error);
 });
